@@ -30,3 +30,54 @@
  *
  *       See the tests in test/CrossBodyBagTest.java for examples.
  */
+
+/**
+ * CrossbodyBag is a subclass of Bag that takes an additional attribute
+ * of how many straps it has.
+ */
+public class CrossbodyBag extends Bag{
+    /** The number of straps on the Crossbody bag*/
+    public int numberOfStraps;
+
+    /**
+     * A constructur that creates a new CrossbodyBag
+     * with the given color and capacity.
+     *
+     * @param col the colour of the bag
+     * @param cap the capacity of the bag
+     * @param num the number of straps on the bag
+     *
+     */
+    public CrossbodyBag(String col, int cap, int num) {
+        super(col, cap);
+        numberOfStraps = num;
+    }
+
+    /**
+     * Returns the value of the number of straps of the CrossbodyBag.
+     *
+     * @return numberOfContents
+     */
+    public int getNumberOfStraps() {
+        return numberOfStraps;
+    }
+
+    /**
+     * Increases the capacity of this bag by 1.
+     */
+    @Override
+    public void enhance() {
+        super.increaseCapacity(2);
+    }
+
+    /**
+     * Return the details of this CrossbodyBag.
+     *
+     * @return a String describing the Bag.
+     */
+    @Override
+    public String toString() {
+        return this.getColor() + " Crossbody Bag with " + numberOfStraps + " straps (" + this.getNumberOfContents() + " / " +
+                this.getCapacity() + ")";
+    }
+}
